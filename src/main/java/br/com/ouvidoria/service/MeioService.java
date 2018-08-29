@@ -6,7 +6,6 @@
 package br.com.ouvidoria.service;
 
 import br.com.ouvidoria.entity.Meio;
-import br.com.ouvidoria.exception.ObjectNotFoundException;
 import br.com.ouvidoria.repository.MeioRepository;
 import java.util.List;
 import java.util.Optional;

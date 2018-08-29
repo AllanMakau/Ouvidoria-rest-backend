@@ -5,17 +5,16 @@
  */
 package br.com.ouvidoria.repository;
 
-import br.com.ouvidoria.entity.Meio;
+import br.com.ouvidoria.entity.Tipologia;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-
 
 /**
  *
  * @author Alan
  */
-@Repository
-public interface MeioRepository extends JpaRepository<Meio, Integer>{
-    
 
+@Repository
+public interface TipologiaRepository extends JpaRepository<Tipologia, Integer>{
+    
 }

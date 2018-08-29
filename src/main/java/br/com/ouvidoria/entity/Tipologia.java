@@ -17,21 +17,21 @@ import javax.persistence.Id;
  */
 
 @Entity
-public class Meio implements Serializable{
-     
+public class Tipologia implements Serializable{
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String descricao;
 
-    public Meio(){}
-    
-    public Meio(Integer id, String descricao) {
+    public Tipologia() {
+    }
+
+    public Tipologia(Integer id, String descricao) {
         this.id = id;
         this.descricao = descricao;
     }
 
-    
     public Integer getId() {
         return id;
     }
@@ -47,6 +47,7 @@ public class Meio implements Serializable{
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
+    
     
     
 }
