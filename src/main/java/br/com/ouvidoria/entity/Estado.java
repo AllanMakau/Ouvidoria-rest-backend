@@ -5,6 +5,7 @@
  */
 package br.com.ouvidoria.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.sun.javafx.scene.control.skin.VirtualFlow;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -29,6 +30,7 @@ public class Estado implements  Serializable{
     private String nome;
     private String uf;
     
+    @JsonIgnore
     @OneToMany(mappedBy = "uf")
     private List<Cidade> cidades = new ArrayList<>();
 

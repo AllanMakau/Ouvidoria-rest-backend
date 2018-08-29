@@ -13,7 +13,8 @@ package br.com.ouvidoria.enums;
 public enum Sexo {
     
     MASCULINO(1,"Masculino"),
-    FEMENINO(2,"Feminino");
+    FEMININO(2,"Feminino"),
+    NAOAPLICA(3,"Não se aplica");
     
     private Integer id;
     private String descricao;
