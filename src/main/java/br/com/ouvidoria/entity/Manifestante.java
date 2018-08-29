@@ -9,16 +9,24 @@ import br.com.ouvidoria.enums.Sexo;
 import br.com.ouvidoria.enums.TipoManifestante;
 import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 /**
  *
  * @author Alan
  */
+
+@Entity
 public class Manifestante implements Serializable {
     
     
-    private Long id;
-    private String nomeCompleto;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+    private String nome;
     private Sexo sexo;
     private Date dataNacimento;
     private TipoManifestante tipoPessoa;

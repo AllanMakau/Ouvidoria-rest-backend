@@ -1,7 +1,11 @@
 package br.com.ouvidoria;
 
+import br.com.ouvidoria.entity.Cidade;
+import br.com.ouvidoria.entity.Estado;
 import br.com.ouvidoria.entity.Meio;
 import br.com.ouvidoria.entity.Tipologia;
+import br.com.ouvidoria.repository.CidadeRespository;
+import br.com.ouvidoria.repository.EstadoRespository;
 import br.com.ouvidoria.repository.MeioRepository;
 import br.com.ouvidoria.repository.TipologiaRepository;
 import java.util.Arrays;
@@ -18,6 +22,12 @@ public class OuvidoriaApplication implements CommandLineRunner{
     
     @Autowired
     TipologiaRepository tipo;
+    
+    @Autowired
+    CidadeRespository cidadeRepository;
+    
+    @Autowired
+    EstadoRespository estadoRepository;
     
 	public static void main(String[] args) {
 		SpringApplication.run(OuvidoriaApplication.class, args);
@@ -40,5 +50,19 @@ public class OuvidoriaApplication implements CommandLineRunner{
         Tipologia t5 = new Tipologia(null, "Denúncia");
         
         tipo.saveAll(Arrays.asList(t1,t2,t3,t4,t5));
+        
+        
+                Estado est1 = new Estado(null,"MG", "Minas Gerais");
+		Estado est2 = new Estado(null,"SP", "São Paulo");
+		
+		Cidade c1 = new Cidade(null, "Uberlândia", est1);
+		Cidade c2 = new Cidade(null, "São Paulo", est2);
+		Cidade c3 = new Cidade(null, "Campinas", est2);
+		
+		est1.getCidades().addAll(Arrays.asList(c1));
+		est2.getCidades().addAll(Arrays.asList(c2, c3));
+
+		estadoRepository.saveAll(Arrays.asList(est1, est2));
+		cidadeRepository.saveAll(Arrays.asList(c1, c2, c3));
     }
 }

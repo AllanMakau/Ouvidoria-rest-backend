@@ -24,7 +24,7 @@ public class TipologiaService {
     private TipologiaRepository repo;
     
     public List<Tipologia> listarTodos(){
-    
+      
        return repo.findAll();
     }
     
@@ -40,7 +40,7 @@ public class TipologiaService {
     }
     
     public Tipologia atualizar(Tipologia obj){
-        obj = repo.save(obj);
+        obj =   repo.save(obj);
         return obj ;
     }
    
